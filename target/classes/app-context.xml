@@ -35,23 +35,53 @@
             <ref bean="itemList"/>
         </property>
     </bean>
-    <bean id="itemList" class="java.util.ArrayList">
-        <constructor-arg>
-            <list>
-                <value>Item 1</value>
-                <value>Item 2</value>
-                <value>Item 3</value>
-            </list>
-        </constructor-arg>
+    <bean id="itemList" class="AddressBook.AddressBook">
     </bean>
-    <bean id="buttonPanel" class=
-            "AddressBook.BoxLayoutPanel" init-method="init">
+    <bean id="buttonPanel" class="AddressBook.BoxLayoutPanel" init-method="init">
         <property name="axis">
             <value>0</value>
         </property>
         <property name="panelComponents">
             <list>
+                <ref bean="deleteButton"/>
+                <ref bean="addNewButton"/>
             </list>
+        </property>
+    </bean>
+    <bean id="deleteButton" class="AddressBook.ActionListenerButton"
+          init-method="init">
+        <property name="actionListener">
+            <ref bean="deleteButtonActionListener"/>
+        </property>
+        <property name="text">
+            <value>Delete</value>
+        </property>
+    </bean>
+    <bean id="deleteButtonActionListener"
+          class="AddressBook.DeleteButtonActionListener">
+        <property name="list">
+            <ref bean="itemList"/>
+        </property>
+        <property name="table">
+            <ref bean="itemTable"/>
+        </property>
+    </bean>
+    <bean id="addNewButton" class="AddressBook.ActionListenerButton"
+          init-method="init">
+        <property name="actionListener">
+            <ref bean="addNewButtonActionListener"/>
+        </property>
+        <property name="text">
+            <value>Add New</value>
+        </property>
+    </bean>
+    <bean id="addNewButtonActionListener"
+          class="AddressBook.AddNewButtonActionListener">
+        <property name="list">
+            <ref bean="itemList"/>
+        </property>
+        <property name="table">
+            <ref bean="itemTable"/>
         </property>
     </bean>
 </beans>

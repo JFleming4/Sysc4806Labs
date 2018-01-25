@@ -23,6 +23,13 @@ public class AddressBook {
             buddy.setBook(this);
         }
     }
+    public void removeBuddy(int index) {
+        buddies.remove(index);
+    }
+
+    public BuddyInfo getBuddyAt(int index) {
+        return buddies.get(index);
+    }
 
     public int getId() {
         return id;
@@ -51,8 +58,8 @@ public class AddressBook {
         return stringOut;
     }
     public static void main(String[] args) {
-        Launcher launcher = new Launcher();
-        launcher.launch();
+
+
         BuddyInfo bud1 = new BuddyInfo("Bob", "45646565456");
         BuddyInfo bud2 = new BuddyInfo("Carl", "123312132");
         BuddyInfo bud3 = new BuddyInfo("Dean", "789789789");
@@ -65,6 +72,8 @@ public class AddressBook {
         book.addBuddy(bud3);
         book.addBuddy(bud4);
         book.addBuddy(bud5);
+        Launcher launcher = new Launcher();
+        launcher.launch();
         System.out.println(book);
     }
 }

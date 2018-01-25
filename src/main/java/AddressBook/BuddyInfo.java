@@ -9,7 +9,7 @@ public class BuddyInfo {
     private String name;
     private String number;
     @Id @GeneratedValue
-    private int id;
+    private Long id;
     @ManyToOne
     private AddressBook book;
     public BuddyInfo() {this(null,null);}
@@ -18,11 +18,11 @@ public class BuddyInfo {
         this.number = Number;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
     public void setBook(AddressBook abook) {

@@ -4,10 +4,10 @@ import javax.swing.table.AbstractTableModel;
 import java.util.List;
 
 public class ItemTableModel extends AbstractTableModel {
-    List itemList;
+    AddressBook book;
 
     public boolean isCellEditable(int rowIndex, int columnIndex) {
-        return true;
+        return false;
     }
 
     public int getColumnCount() {
@@ -18,20 +18,20 @@ public class ItemTableModel extends AbstractTableModel {
         return "Items";
     }
 
-    public void setItemList(List itemList) {
-        this.itemList = itemList;
+    public void setItemList(AddressBook book) {
+        this.book = book;
     }
 
     public int getRowCount() {
-        return itemList.size();
+        return book.getSize();
     }
 
-    public void setValueAt(Object value,
-                           int rowIndex, int columnIndex) {
-        itemList.set(rowIndex, value);
-    }
+//    public void setValueAt(Object value,
+//                           int rowIndex, int columnIndex) {
+//        itemList.set(rowIndex, value);
+//    }
 
     public Object getValueAt(int rowIndex, int columnIndex) {
-        return itemList.get(rowIndex);
+        return book.getBuddyAt(rowIndex);
     }
 }
