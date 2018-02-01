@@ -30,25 +30,25 @@ public class AddressBookTest {
         assertEquals(2, book.getSize());
     }
 
-    @Test
-    public void testPersist() throws Exception {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persister");
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-        BuddyInfo newBud = new BuddyInfo("Derek", "456981231");
-        book.addBuddy(newBud);
-        tx.begin();
-        em.persist(book);
-        tx.commit();
-
-        Query q = em.createQuery("SELECT ab from AddressBook ab ");
-
-        List<AddressBook> results = q.getResultList();
-
-        System.out.println("List of Buddies");
-
-        for(AddressBook b: results) {
-            System.out.println(b);
-        }
-    }
+//    @Test
+//    public void testPersist() throws Exception {
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persister");
+//        EntityManager em = emf.createEntityManager();
+//        EntityTransaction tx = em.getTransaction();
+//        BuddyInfo newBud = new BuddyInfo("Derek", "456981231");
+//        book.addBuddy(newBud);
+//        tx.begin();
+//        em.persist(book);
+//        tx.commit();
+//
+//        Query q = em.createQuery("SELECT ab from AddressBook ab ");
+//
+//        List<AddressBook> results = q.getResultList();
+//
+//        System.out.println("List of Buddies");
+//
+//        for(AddressBook b: results) {
+//            System.out.println(b);
+//        }
+//    }
 }

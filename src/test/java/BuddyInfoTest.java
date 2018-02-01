@@ -46,26 +46,26 @@ public class BuddyInfoTest {
         assertEquals("789", bud.getNumber());
     }
 
-    @Test
-    public void testPersist() throws Exception {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persister");
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-
-        tx.begin();
-        em.persist(bud);
-        em.persist(bud2);
-        tx.commit();
-
-        Query q = em.createQuery("SELECT b from BuddyInfo b ");
-
-        List<BuddyInfo> results = q.getResultList();
-
-        System.out.println("List of Buddies");
-
-        for(BuddyInfo b: results) {
-            System.out.println(b);
-        }
-        //assertTrue(results.contains(bud) && results.contains(bud2) && results.size() == 2);
-    }
+//    @Test
+//    public void testPersist() throws Exception {
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persister");
+//        EntityManager em = emf.createEntityManager();
+//        EntityTransaction tx = em.getTransaction();
+//
+//        tx.begin();
+//        em.persist(bud);
+//        em.persist(bud2);
+//        tx.commit();
+//
+//        Query q = em.createQuery("SELECT b from BuddyInfo b ");
+//
+//        List<BuddyInfo> results = q.getResultList();
+//
+//        System.out.println("List of Buddies");
+//
+//        for(BuddyInfo b: results) {
+//            System.out.println(b);
+//        }
+//        //assertTrue(results.contains(bud) && results.contains(bud2) && results.size() == 2);
+//    }
 }

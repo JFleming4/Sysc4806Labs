@@ -13,19 +13,21 @@ public class Application {
     private static final Logger log = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class);
+        SpringApplication.run(Application.class, args);
     }
 
     @Bean
-    public CommandLineRunner demo(BuddyInfoRepository repository) {
+    public CommandLineRunner demo(AddressBookRepository bookRepo, BuddyInfoRepository repository) {
         return (args) -> {
             // save a couple of customers
-            repository.save(new BuddyInfo("Jack", "789456123"));
-            repository.save(new BuddyInfo("Chloe", "321987654"));
-            repository.save(new BuddyInfo("Kim", "654321798"));
-            repository.save(new BuddyInfo("David", "789174369"));
-            repository.save(new BuddyInfo("Michelle", "963852741"));
+            AddressBook book = new AddressBook();
+            book.addBuddy(new BuddyInfo("Jack", "789456123"));
+            book.addBuddy(new BuddyInfo("Chloe", "321987654"));
+            book.addBuddy(new BuddyInfo("Kim", "654321798"));
+            book.addBuddy(new BuddyInfo("David", "789174369"));
+            book.addBuddy(new BuddyInfo("Michelle", "963852741"));
 
+            bookRepo.save(book);
             // fetch all customers
             log.info("Customers found with findAll():");
             log.info("-------------------------------");

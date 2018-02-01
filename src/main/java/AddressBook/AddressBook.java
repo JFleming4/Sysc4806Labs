@@ -9,7 +9,7 @@ public class AddressBook {
     private List<BuddyInfo> buddies;
 
     @Id@GeneratedValue
-    private int id;
+    private Long id;
 
     public AddressBook() {
         buddies = new ArrayList<BuddyInfo>();
@@ -31,11 +31,11 @@ public class AddressBook {
         return buddies.get(index);
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -72,8 +72,6 @@ public class AddressBook {
         book.addBuddy(bud3);
         book.addBuddy(bud4);
         book.addBuddy(bud5);
-        Launcher launcher = new Launcher();
-        launcher.launch();
         System.out.println(book);
     }
 }
