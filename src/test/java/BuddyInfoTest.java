@@ -16,7 +16,7 @@ public class BuddyInfoTest {
     BuddyInfo bud2;
     @Before
     public void setUp() throws Exception {
-        bud = new BuddyInfo("Justin", "9879879879");
+        bud = new BuddyInfo("Justin", "9879879879", "Home");
         bud2 = new BuddyInfo("George", "8258252855");
     }
 
@@ -29,6 +29,18 @@ public class BuddyInfoTest {
     public void setName() throws Exception {
         bud.setName("George");
         assertEquals("George", bud.getName());
+    }
+
+    @Test
+    public void getAddress() throws Exception {
+        assertEquals("Home", bud.getAddress());
+        assertEquals("None of you business", bud2.getAddress());
+    }
+
+    @Test
+    public void setAddress() throws Exception {
+        bud2.setAddress("Gutter");
+        assertEquals("Gutter", bud2.getAddress());
     }
 
     @Test

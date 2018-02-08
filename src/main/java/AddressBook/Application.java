@@ -21,8 +21,8 @@ public class Application {
         return (args) -> {
             // save a couple of customers
             AddressBook book = new AddressBook();
-            book.addBuddy(new BuddyInfo("Jack", "789456123"));
-            book.addBuddy(new BuddyInfo("Chloe", "321987654"));
+            book.addBuddy(new BuddyInfo("Jack", "789456123", "1 Barn Dr"));
+            book.addBuddy(new BuddyInfo("Chloe", "321987654", "2 Gutter Lane"));
             book.addBuddy(new BuddyInfo("Kim", "654321798"));
             book.addBuddy(new BuddyInfo("David", "789174369"));
             book.addBuddy(new BuddyInfo("Michelle", "963852741"));

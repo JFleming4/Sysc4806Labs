@@ -8,14 +8,19 @@ import javax.persistence.ManyToOne;
 public class BuddyInfo {
     private String name;
     private String number;
+    private String address;
     @Id @GeneratedValue
     private Long id;
     @ManyToOne
     private AddressBook book;
     public BuddyInfo() {this(null,null);}
     public BuddyInfo(String Name, String Number) {
+        this(Name, Number, "None of you business");
+    }
+    public BuddyInfo(String Name, String Number, String Address) {
         this.name = Name;
         this.number = Number;
+        this.address = Address;
     }
 
     public void setId(Long id) {
@@ -30,6 +35,14 @@ public class BuddyInfo {
             abook.addBuddy(this);
         }
         this.book= abook;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public AddressBook getBook() {
