@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>New Address Book</title>
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/newbook}" th:object="${book}" method="post">
+    <p><input type="submit" value="Create New Book"/></p>
+</form>
+</body>
+</html>

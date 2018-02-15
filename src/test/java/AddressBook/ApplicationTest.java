@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class ApplicationTest {
     @Autowired
-    private AddressBookController controller;
+    private AddressBookRestController controller;
     @Test
     public void contextLoads() throws Exception {
         assertThat(controller).isNotNull();

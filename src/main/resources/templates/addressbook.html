@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>AddressBook</title>
+</head>
+<body>
+<h1>Address Book</h1>
+<p th:text="'id: ' + ${book.getId()}"/>
+<p>Buddies
+    <ul>
+        <li th:each="buddy: ${book.getBuddies()}">
+<p th:text="'Name: ' + ${buddy.getName()}"></p>
+<p th:text="'Number: ' + ${buddy.getNumber()}"></p>
+<p th:text="'Address: ' + ${buddy.getAddress()}"></p>
+</li>
+</ul>
+</p>
+<a href="/newbuddy">Create new buddy</a>
+</body>
+</html>
